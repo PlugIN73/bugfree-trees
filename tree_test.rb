@@ -55,4 +55,18 @@ class TestTree < Minitest::Test
     assert {@tree.node.left.left.value == 2}
   end
 
+  def test_should_simply_search_elem
+    @tree.insert 5
+    @tree.insert 3
+    @tree.insert 7
+    @tree.insert 6
+    @tree.insert 4
+
+    result = @tree.search(3)
+    assert {result == 3}
+
+    result = @tree.search(6)
+    assert {result == 6}
+  end
+
 end

@@ -27,4 +27,17 @@ class Tree
     end
     node.value = value
   end
+
+  def search(value)
+    node = @node
+    while node.value
+      if node.value < value
+        node = node.right
+      elsif node.value > value
+        node = node.left
+      else
+        return node.value
+      end
+    end
+  end
 end
