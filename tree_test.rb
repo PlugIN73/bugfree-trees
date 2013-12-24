@@ -15,11 +15,19 @@ class TestTree < Minitest::Test
     assert {@tree.node.value == 5}
   end
 
-  def test_should_insert_new_element
+  def test_should_insert_new_element_right
     @tree.insert 5
     @tree.insert 6
 
     assert {@tree.node.right.value == 6}
+  end
+
+  def test_should_insert_new_element_left
+    @tree.insert 5
+    @tree.insert 6
+    @tree.insert 4
+
+    assert {@tree.node.left.value == 4}
   end
 
 end

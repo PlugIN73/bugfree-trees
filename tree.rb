@@ -17,9 +17,12 @@ class Tree
   def insert(value)
     node = @node
     while node.value
-      if !node.right
-        node.right = Node.new(value)
-        return
+      if node.value < value
+        node.right = Node.new if !node.right
+        node = node.right
+      else
+        node.left = Node.new if !node.left
+        node = node.left
       end
     end
     node.value = value
