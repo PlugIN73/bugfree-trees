@@ -8,9 +8,9 @@ class Node
 end
 
 class Tree
-  attr_accessible :root
+  attr_reader :node
   def initialize
-    @root ||= Node.new
+    @node ||= Node.new
   end
 
   def insert(value)
